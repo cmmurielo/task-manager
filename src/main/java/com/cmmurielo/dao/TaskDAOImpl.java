@@ -1,7 +1,7 @@
 package com.cmmurielo.dao;
 
 import com.cmmurielo.model.Task;
-import com.cmmurielo.utils.PostgresConnection;
+import com.cmmurielo.utils.SQLiteConnection;
 import com.cmmurielo.utils.QueryConstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ public class TaskDAOImpl implements TaskDAO {
 
     Logger logger = LoggerFactory.getLogger(TaskDAOImpl.class);
 
-    PostgresConnection postgresConnection = new PostgresConnection();
+    SQLiteConnection postgresConnection = new SQLiteConnection();
 
     public List<Task> getAllTasksActive() throws SQLException {
         List<Task> tasks = new ArrayList<>();
