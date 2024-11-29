@@ -68,12 +68,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", isCompleted=" + isCompleted +
-                ", created='" + created + '\'' +
-                ", active=" + active +
-                '}';
+        return String.format("Task ID: %d\nDescription: %s\nCompleted: %s\nCreated: %s\n", id, description, isCompleted ? "Yes" : "No", created);
     }
 }
