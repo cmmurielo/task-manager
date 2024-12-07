@@ -11,8 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-import static com.cmmurielo.utils.Constants.*;
-
 public class SQLiteConnection {
 
     Logger logger = LoggerFactory.getLogger(SQLiteConnection.class);
@@ -50,11 +48,8 @@ public class SQLiteConnection {
     }
 
     private void createTableIfNotExists(Connection conn) {
-        String createTableSQL = "CREATE TABLE IF NOT EXISTS tasks ("
-                + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + "description TEXT NOT NULL, "
-                + "is_completed BOOLEAN NOT NULL, "
-                + "created TEXT NOT NULL, "
+        String createTableSQL = "CREATE TABLE IF NOT EXISTS tasks (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "description TEXT NOT NULL, " + "is_completed BOOLEAN NOT NULL, " + "created TEXT NOT NULL, "
                 + "active BOOLEAN NOT NULL" + ");";
         try (Statement stmt = conn.createStatement()) {
             stmt.execute(createTableSQL);
