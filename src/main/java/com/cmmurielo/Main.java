@@ -23,51 +23,50 @@ public class Main {
             scanner.nextLine();
 
             switch (opcion) {
-            case 1:
-                System.out.println("Indica la descripcion para la tarea: ");
-                String description = scanner.nextLine();
-                taskService.addTask(description);
-                break;
-            case 2:
-                System.out.println("Listando todas las tareas...\n");
-                taskService.getTasksActive().forEach(task -> System.out.println(task.toString()));
-                goBack(scanner);
-                break;
-            case 3:
-                System.out.println("Listando solo las tareas pendientes...\n");
-                taskService.getNotCompletedTasks().forEach(task -> System.out.println(task.toString()));
-                goBack(scanner);
-                break;
-            case 4:
-                System.out.println("Listando solo las tareas completadas...\n");
-                taskService.getCompletedTasks().forEach(task -> System.out.println(task.toString()));
-                goBack(scanner);
-                break;
-            case 5:
-                System.out.println("Introduce el ID de la tarea a completar:");
-                int taskIdToComplete = scanner.nextInt();
-                taskService.completeTask(taskIdToComplete);
-                goBack(scanner);
-                break;
-            case 6:
-                System.out.println("Introduce el ID de la tarea a eliminar:");
-                int taskIdToDelete = scanner.nextInt();
-                taskService.deleteTask(taskIdToDelete);
-                goBack(scanner);
-                break;
-            case 7:
-                System.out.println("Eliminando todas las tareas completadas...");
-                taskService.deleteAllTaskCompleted();
-                goBack(scanner);
-                break;
-            case 0:
-                System.out.println("Saliendo...");
-                scanner.close();
-                System.exit(0);
-            default:
-                System.out.println("Opción no válida. Inténtalo de nuevo.");
+                case 1:
+                    System.out.println("Indica la descripcion para la tarea: ");
+                    String description = scanner.nextLine();
+                    taskService.addTask(description);
+                    break;
+                case 2:
+                    System.out.println("Listando todas las tareas...\n");
+                    taskService.getTasksActive().forEach(task -> System.out.println(task.toString()));
+                    goBack(scanner);
+                    break;
+                case 3:
+                    System.out.println("Listando solo las tareas pendientes...\n");
+                    taskService.getNotCompletedTasks().forEach(task -> System.out.println(task.toString()));
+                    goBack(scanner);
+                    break;
+                case 4:
+                    System.out.println("Listando solo las tareas completadas...\n");
+                    taskService.getCompletedTasks().forEach(task -> System.out.println(task.toString()));
+                    goBack(scanner);
+                    break;
+                case 5:
+                    System.out.println("Introduce el ID de la tarea a completar:");
+                    int taskIdToComplete = scanner.nextInt();
+                    taskService.completeTask(taskIdToComplete);
+                    goBack(scanner);
+                    break;
+                case 6:
+                    System.out.println("Introduce el ID de la tarea a eliminar:");
+                    int taskIdToDelete = scanner.nextInt();
+                    taskService.deleteTask(taskIdToDelete);
+                    goBack(scanner);
+                    break;
+                case 7:
+                    System.out.println("Eliminando todas las tareas completadas...");
+                    taskService.deleteAllTaskCompleted();
+                    goBack(scanner);
+                    break;
+                case 0:
+                    System.out.println("Saliendo...");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Opción no válida. Inténtalo de nuevo.");
             }
-
         }
     }
 
