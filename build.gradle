@@ -7,6 +7,12 @@ repositories {
     mavenCentral()
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
 dependencies {
     implementation 'org.xerial:sqlite-jdbc:3.41.2.1'
     implementation 'org.slf4j:slf4j-api:2.0.16'
