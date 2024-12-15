@@ -8,4 +8,7 @@ public class QueryConstant {
     public static final String DELETE_ALL_TASK_COMPLETED = "UPDATE tasks SET active=false WHERE is_completed=true;";
     public static final String LIST_NOT_COMPLETE_TASKS = "SELECT * FROM tasks WHERE is_completed = false AND active=true ORDER BY id DESC";
     public static final String LIST_COMPLETE_TASKS = "SELECT * FROM tasks WHERE is_completed = true AND active=true ORDER BY id DESC";
+
+    private QueryConstant() {
+    }
 }

@@ -42,8 +42,7 @@ public class SQLiteConnection {
         try {
             return DriverManager.getConnection(url);
         } catch (SQLException e) {
-            logger.error("Error al conectar a la Base de datos: {}", url, e);
-            throw new RuntimeException(e);
+            throw new SQLException("Error al conectar a la Base de datos: " + url, e);
         }
     }
 
